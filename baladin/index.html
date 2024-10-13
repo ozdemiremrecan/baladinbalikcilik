@@ -681,7 +681,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="mb-5">
-          <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.5136091893087!2d38.704298111721066!3d40.94832602299464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406379a93019dbfd%3A0xafe31bacae8cbd2b!2zQmFsYWTEsW4gQmFsxLFrw6fEsWzEsWs!5e0!3m2!1sen!2str!4v1727005395828!5m2!1sen!2str" frameborder="0" allowfullscreen=""></iframe>
+          <iframe loading="lazy" style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.5136091893087!2d38.704298111721066!3d40.94832602299464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406379a93019dbfd%3A0xafe31bacae8cbd2b!2zQmFsYWTEsW4gQmFsxLFrw6fEsWzEsWs!5e0!3m2!1sen!2str!4v1727005395828!5m2!1sen!2str" frameborder="0" allowfullscreen=""></iframe>
         </div><!-- End Google Maps -->
 
         <div class="row gy-4">
@@ -839,6 +839,11 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      AOS.init();
+    });
+  </script>
 
 </body>
 
