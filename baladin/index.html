@@ -43,10 +43,12 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Anasayfa<br></a></li>
-          <li><a href="#about">Hakkımızda</a></li>
-          <li><a href="#menu">Menü</a></li>
-          <li><a href="#gallery">Galeri</a></li>
+          <li><a data-scroll="hero" class="active">Anasayfa<br></a></li>
+          <li><a data-scroll="about">Hakkımızda</a></li>
+          <li><a data-scroll="menu">Menü</a></li>
+          <li><a data-scroll="gallery">Galeri</a></li>
+          <li><a data-scroll="contact">Adres</a></li>
+
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -68,7 +70,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="#contact">Contact Us</a>
+      <a class="btn-getstarted" href="https://www.instagram.com/baladinbalikcilik/">İletişim</a>
 
     </div>
   </header>
@@ -720,7 +722,7 @@
               <i class="icon bi bi-clock flex-shrink-0"></i>
               <div>
                 <h3>Açılış Saati<br></h3>
-                <p><strong>Mon-Sat:</strong> 08AM - 12AM; <strong>Sunday:</strong> Closed</p>
+                <p><strong>Mon-Sat:</strong> 08.00 - 00.00
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -794,8 +796,7 @@
           <div>
             <h4>Açılış Saatleri</h4>
             <p>
-              <strong>Mon-Sat:</strong> <span>08AM - 12AM</span><br>
-              <strong>Sunday</strong>: <span>Closed</span>
+              <strong>Pzt-Paz</strong> <span>08:00 - 00:00</span><br>
             </p>
           </div>
         </div>
@@ -843,6 +844,33 @@
       AOS.init();
     });
   </script>
+  <script>
+    window.addEventListener('hashchange', function() {
+      if (window.location.href.indexOf('index.html') !== -1) {
+        window.history.replaceState({}, document.title, window.location.href.replace('index.html', ''));
+      }
+    });
+  </script>
+  <script>
+    document.querySelectorAll('a[data-scroll]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('data-scroll');
+        const targetElement = document.getElementById(targetId);
+  
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+  
+        // URL'deki hash'i temizle
+        window.history.replaceState(null, null, ' ');
+      });
+    });
+  </script>
+  
 
 </body>
 

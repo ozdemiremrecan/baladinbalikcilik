@@ -56,7 +56,9 @@
 :root {
   scroll-behavior: smooth;
 }
-
+a{
+  cursor: pointer !important;
+}
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
